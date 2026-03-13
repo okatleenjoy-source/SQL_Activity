@@ -51,6 +51,76 @@ INSERT INTO `customers` (`customer_id`, `customer_name`, `city`, `membership_lev
 (9, 'Ian', 'Bohol', 'Gold', '2025-04-10'),
 (10, 'Julia', 'Cebu', 'Bronze', '2025-04-15');
 
+--Q1:
+SELECT * 
+FROM Customers
+WHERE city = 'Cebu';
+
+
+--Q2:
+SELECT * 
+FROM Customers
+WHERE membership_level = 'Gold';
+
+
+--Q3:
+SELECT * 
+FROM Customers
+WHERE customer_name LIKE 'A%' 
+OR customer_name LIKE 'D%';
+
+--Q4:
+SELECT * 
+FROM Customers
+WHERE city = 'Cebu'
+AND (membership_level = 'Silver' OR membership_level = 'Gold');
+
+--Q5:
+SELECT * 
+FROM Customers
+WHERE join_date BETWEEN '2025-02-01' AND '2025-03-31';
+
+
+--Q6:
+SELECT * 
+FROM Customers
+WHERE (city = 'Bohol' OR city = 'Tagbilaran')
+AND membership_level = 'Bronze';
+
+--Q7:
+SELECT * 
+FROM Customers
+WHERE customer_name LIKE '%a%'
+OR customer_name LIKE '%A%';
+
+
+--Q8:
+SELECT * 
+FROM Customers
+WHERE city = 'Cebu'
+AND membership_level = 'Gold'
+AND join_date < '2025-03-01';
+
+--Q9:
+SELECT * 
+FROM Customers
+WHERE (city = 'Bohol' OR city = 'Tagbilaran')
+AND join_date <= '2025-02-28'
+AND (membership_level = 'Silver' OR membership_level = 'Bronze');
+
+--Q10:
+SELECT * 
+FROM Customers
+WHERE customer_id NOT IN (1,4,6)
+AND join_date > '2025-02-28';
+
+--Q11:
+SELECT * 
+FROM Customers
+WHERE join_date BETWEEN '2025-04-01' AND '2025-04-30'
+AND (city = 'Cebu' OR city = 'Bohol')
+AND membership_level <> 'Bronze';
+
 --
 -- Indexes for dumped tables
 --
